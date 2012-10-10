@@ -7,7 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <WebKit/WebKit.h>
+#import "UKNibOwner.h"
 
-@interface AZHelpViewer : NSObject
+@interface AZHelpViewer : UKNibOwner {
+    IBOutlet WebView* pageview;
+    IBOutlet NSTreeController* indexController;
+    IBOutlet NSWindow* helpWindow;
+    IBOutlet NSOutlineView* indexView;
+    NSMutableArray* index;
+}
 
+@property (assign) NSString* directory;
+
+-(AZHelpViewer*) initWithDirectory:(NSString*)xdirectory;
+-(void)show;
+-(void)setDisplayPage:(NSString*) path;
 @end
