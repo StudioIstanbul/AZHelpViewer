@@ -16,9 +16,11 @@
     IBOutlet NSWindow* helpWindow;
     IBOutlet NSOutlineView* indexView;
     NSMutableArray* index;
+    NSString *_cdirectory;
+    NSString* displayFile;
 }
 
-@property (assign) NSString* directory;
+@property (readwrite,assign) NSString* cdirectory;
 
 -(AZHelpViewer*) initWithDirectory:(NSString*)xdirectory;
 -(void)show;
