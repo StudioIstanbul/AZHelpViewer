@@ -18,9 +18,11 @@
     NSMutableArray* index;
     NSString *_cdirectory;
     NSString* displayFile;
+    BOOL visible;
 }
 
 @property (readwrite,assign) NSString* cdirectory;
+@property (readonly) BOOL visible;
 
 -(AZHelpViewer*) initWithDirectory:(NSString*)xdirectory;
 -(void)show;

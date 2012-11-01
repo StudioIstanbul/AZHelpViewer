@@ -11,6 +11,7 @@
 @implementation AZHelpViewer
 
 @synthesize cdirectory = _cdirectory;
+@dynamic visible;
 
 -(AZHelpViewer*) initWithDirectory:(NSString*)xdirectory {
     //NSLog(@"init");
@@ -29,6 +30,11 @@
     [self setDisplayPage:[NSString pathWithComponents:[NSArray arrayWithObjects:self.cdirectory, @"index.html", nil]]];
     [helpWindow makeKeyAndOrderFront:self];
     
+}
+
+-(BOOL)visible {
+    if ([helpWindow isKeyWindow]) return YES;
+    return NO;
 }
 
 -(void)outlineViewSelectionDidChange:(id)notification {
