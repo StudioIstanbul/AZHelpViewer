@@ -63,7 +63,7 @@
         NSIndexPath* selItem = [indexController selectionIndexPath];
         [indexView collapseItem:nil collapseChildren:YES];
         for (NSDictionary* pages in [indexController content]) {
-            if ([[pages valueForKey:@"title"] compare:title] == NSOrderedSame) {
+            if ([[pages valueForKey:@"title"] isEqualToString:title] == YES) {
                 //NSLog(@"mainpage: %i / selected %i", [selItem indexAtPosition:0], pagNum);
                 if ([selItem indexAtPosition:0] != pagNum) {
                     [indexController setSelectionIndexPath:[NSIndexPath indexPathWithIndex:pagNum]];
