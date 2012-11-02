@@ -23,6 +23,7 @@
 
 @property (readwrite,assign) NSString* cdirectory;
 @property (readonly) BOOL visible;
+@property (readonly) NSWindow* helpWindow;
 
 -(AZHelpViewer*) initWithDirectory:(NSString*)xdirectory;
 -(void)show;

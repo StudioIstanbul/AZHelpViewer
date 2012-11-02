@@ -12,6 +12,7 @@
 
 @synthesize cdirectory = _cdirectory;
 @dynamic visible;
+@synthesize helpWindow;
 
 -(AZHelpViewer*) initWithDirectory:(NSString*)xdirectory {
     //NSLog(@"init");
