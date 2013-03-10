@@ -12,7 +12,9 @@
 
 @synthesize cdirectory = _cdirectory;
 @dynamic visible;
+#if !TARGET_OS_IPHONE
 @synthesize helpWindow;
+#endif
 
 -(AZHelpViewer*) initWithDirectory:(NSString*)xdirectory {
     //NSLog(@"init");
@@ -30,7 +32,6 @@
     //NSLog(@"show %@", [helpWindow title]);
     [self setDisplayPage:[NSString pathWithComponents:[NSArray arrayWithObjects:self.cdirectory, @"index.html", nil]]];
     [helpWindow makeKeyAndOrderFront:self];
-    
 }
 
 -(BOOL)visible {
