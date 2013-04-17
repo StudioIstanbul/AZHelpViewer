@@ -12,7 +12,7 @@
 
 @synthesize cdirectory = _cdirectory;
 @dynamic visible;
-@synthesize helpWindow;
+@synthesize helpWindow, displayFile;
 
 -(AZHelpViewer*) initWithDirectory:(NSString*)xdirectory {
     //NSLog(@"init");
@@ -92,6 +92,7 @@
 }
 
 -(void)setDisplayPage:(NSString*) path {
+    self.displayFile = nil;
     //NSLog(@"set page %@", path);
     [[pageview mainFrame] loadHTMLString:[NSString stringWithContentsOfURL:[NSURL fileURLWithPath:path] encoding:NSUTF8StringEncoding error:nil] baseURL:[NSURL fileURLWithPath:[self cdirectory] isDirectory:YES]];
     //NSLog(@"populate tree");
@@ -145,7 +146,7 @@
     //[indexController setContent:index];
     [indexController rearrangeObjects];
     [indexController setSelectionIndexPath:indexPageNum];
-    displayFile = [path lastPathComponent];
+    self.displayFile = [path lastPathComponent];
 }
 
 @end
