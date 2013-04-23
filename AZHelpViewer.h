@@ -29,12 +29,13 @@
     BOOL visible;
 }
 
-@property (readwrite,assign) NSString* cdirectory;
+@property (readwrite,retain) NSString* cdirectory;
 @property (readonly) BOOL visible;
 #if TARGET_OS_IPHONE
 #else
 @property (readonly) NSWindow* helpWindow;
 #endif
+@property (retain) NSString* displayFile;
     
 -(AZHelpViewer*) initWithDirectory:(NSString*)xdirectory;
 -(void)show;
